@@ -1,0 +1,657 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+  margin: 0;
+  padding: 0;
+}
+
+button, summary {
+	cursor: pointer;
+}
+
+
+/*********/
+/* FONTS */
+/*********/
+@font-face {
+	font-family: 'Insignia Roman';
+	src:url("../fonts/Insignia\ Roman.ttf") format("truetype");	
+}
+
+
+
+/****************/
+/* STYLING */
+/****************/
+
+body{
+	background-color: #111;
+	color: #111;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2{
+	font-family: Insignia Roman, sans-serif;
+}
+
+header{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1{
+	font-size: 2em;
+	color: white;
+}
+
+h2{
+	text-transform: uppercase;
+	font-size: 1em;
+	margin-bottom: .5em;
+}
+
+h3{
+	font-size: smaller;
+	text-decoration: underline;
+}
+
+p, blockquote{
+	font-size: smaller;
+}
+
+blockquote{
+	font-style: italic;
+}
+
+body main{
+	background-color: white;
+	margin: 0;
+	width: 100%;
+}
+
+
+
+/* navigatie styling *******************************************************************************************************/
+
+body main nav{
+	background-color: #EE9B01;
+	height: 100vh;
+
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+
+	transform:translatex(100%);
+  	transition:transform .3s;
+}
+
+body main button{
+	background-color: transparent;
+	border: none;
+	position:absolute;
+ 	z-index:100;
+	top: 1.5em;
+	right: 1.5em;
+}
+
+body main button img{
+	max-width: 3em;
+	filter: invert(1);
+}
+
+body main nav h2{
+	writing-mode: vertical-lr;
+	background-color: #881A1D;
+	color: #fff;
+	padding: 1em;
+	letter-spacing: .5em;
+	margin-left: 2em;
+	position: relative;
+}
+
+body main nav h2::after {
+	content: "";
+	position: absolute;
+	top: 8.75em;
+	left: 1.5em;
+	transform: translateX(-50%);
+	border-width: 1.55em;
+	border-style: solid;
+	border-color: #881A1D transparent transparent transparent;
+  }
+
+
+
+
+body main nav ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	gap: 1em;
+	margin-top: 2em;
+
+}
+
+body main nav ul li{
+	list-style-type: none;
+}
+
+body main nav ul li a{
+	text-decoration: none;
+	color: #111;
+	margin-left: 2em;
+}
+
+body main nav ul li a:hover{
+	text-decoration: underline;
+	color: #111;
+}
+
+
+nav.menuOpen {
+	transform:translatex(0);
+  }
+
+
+  @media (min-width:830px){
+	
+	p, blockquote, h3{
+		font-size: 1em;
+	}
+	
+	main button{
+		display: none;
+	}
+
+	body main nav h2 {
+		margin-bottom: -4.75em;
+	  }
+
+	body main nav{
+		position:static;
+		transform: none;
+		height: 4em;
+		display: flex;
+	}
+
+	body main nav h2{
+		z-index: 1000;
+		overflow: visible;
+	}
+
+	body main nav ul{
+		flex-direction: row;
+		gap: .5em;
+		justify-content: space-around;
+		margin-right: 1em;
+		margin-top: 0;
+		top: 0;
+	}
+
+	body main nav ul li{
+		display: flex;
+		align-items: center;
+	}
+
+	body main nav ul li a{
+		text-align: center;
+	}
+
+	body main main{
+		margin-top: 3em;
+	}
+
+	
+
+  }
+
+/* ************************************************************************************************************************** */
+
+body main main{
+	margin-top: 6em;
+}
+
+/* padding voor alle sections behalve de neville brody section */
+main main section:not(section:nth-of-type(3)){
+	padding: 2em;
+}
+
+
+/* eerste p na de navigatie */
+main main > div:first-of-type p{
+	padding: 2em;
+}
+
+
+/* eerste section met rituals foto */
+main main > section:first-of-type{
+	display: grid;
+}
+
+main main > section:first-of-type img{
+	min-width: 17em;
+	max-width: 22em;
+	width: 100%;
+	border-radius: 50%;
+	justify-self: center;
+	margin-top: 1em;
+}
+
+
+
+/* tweede section met karakter en vormgeving *********************************************************************************/
+
+
+main main > div:nth-of-type(2){
+	display: grid;
+}
+
+main main > div:nth-of-type(2) > div{
+	/* display: grid;
+	place-content: center; */
+	padding-left: 2em;
+}
+
+
+/* letterkaart img */
+main main > div:nth-of-type(2) img{
+	width: 100%;
+	/* order: 100; */
+	max-width: 22em;
+}
+
+
+
+
+
+/* Toepassingen en voorbeelden section */
+/* main main section:nth-of-type(3) div{
+	display: grid;
+} */
+
+main main div:nth-of-type(2) section:nth-of-type(2) div figure img {
+	width: 8em;
+}
+
+main main div:nth-of-type(2) section:nth-of-type(2) div div{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+	grid-gap: .5em;
+	place-content: center;
+}
+
+/* ***********************************************************************************************************************88 */
+
+/* probber het zelf section */
+main main > section:nth-of-type(2){
+	background-color: #111;
+	color: 	white;
+	/* padding-top: 17em;
+	padding-bottom: 17em; */
+	height: 20em;
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+}
+
+input{
+	width: 100%;
+	padding: 1em;
+	font-family: Insignia Roman, sans-serif;
+	font-size: larger;
+	color: white;
+	background-color: transparent;
+	border: white 2px solid;
+	border-left: transparent;
+	border-right: transparent;
+	margin-top: 1em;
+}
+
+
+
+
+/* neville brody section */
+
+/* main main section:nth-of-type(5){
+	background-image: url(../images/nevillebrody.jpg);
+	background-size: cover; 
+	background-repeat: no-repeat; */
+	/* width: 100%; */
+	/* height: 100vh; */
+	/* width: 100vw; */
+/* } */
+
+main main > section:nth-of-type(3){
+	background-color: #E6E6E6;
+	position: relative;
+}
+
+main main > section:nth-of-type(3) img{
+	width: 100%;
+}
+
+main main > section:nth-of-type(3) div:nth-of-type(1) h2 span:first-of-type{
+	position: absolute;
+	top: -.2em;
+	font-size: 4em;
+	left: 45%;
+	transform: translateX(-50%);
+	font-weight: lighter;
+}
+
+main main > section:nth-of-type(3) div:nth-of-type(1) h2 span:nth-of-type(2){
+	position: absolute;
+	/* top: 1em; */
+	/* top: 6.5%; */
+	top: 3%;
+	font-size: 2em;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: lighter;
+}
+
+main main > section:nth-of-type(3) div:nth-of-type(1) h2 span:nth-of-type(3){
+	position: absolute;
+	/* top: 2em; */
+	/* top: 13%; */
+	top: 6%;
+	font-size: 2em;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: lighter;
+}
+
+main main > section:nth-of-type(3) div:nth-of-type(1) h2 span:nth-of-type(4){
+	position: absolute;
+	/* top: 3em; */
+	/* top: 19.5%; */
+	top: 9%;
+	font-size: 2em;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: lighter;
+}
+
+main main > section:nth-of-type(3) div:nth-of-type(1) h2 span:nth-of-type(5){
+	position: absolute;
+	/* top: 3em; */
+	/* top: 19.5%; */
+	top: 7%;
+	font-size: 4em;
+	left: 60%;
+	transform: translateX(-50%);
+	font-weight: lighter;
+	color: white;
+}
+
+main main > section:nth-of-type(3) div:nth-of-type(1) h2 span:nth-of-type(6){
+	position: absolute;
+	/* top: 3em; */
+	/* top: 26%; */
+	top: 12%;
+	font-size: 2em;
+	left: 60%;
+	transform: translateX(-50%);
+	font-weight: lighter;
+	color: white;
+}
+
+main main > section:nth-of-type(3) div:nth-of-type(1) h2 span:nth-of-type(7){
+	position: absolute;
+	/* top: 26%; */
+	top: 12%;
+	font-size: 2em;
+	left: 70%;
+	transform: translateX(-50%);
+	font-weight: lighter;
+	color: white;
+}
+
+main main > section:nth-of-type(3) div:nth-of-type(1) h2 span:nth-of-type(8){
+	position: absolute;
+	/* top: 3em; */
+	top: 1em;
+	font-size: 1em;
+	right: 0;
+	transform: translateX(-50%);
+	font-weight: lighter;
+}
+
+
+/* main main section:nth-of-type(5) div:nth-of-type(1){ */
+	/* background-image: url(../images/nevillebrody.jpg);
+	background-size: cover; 
+	background-repeat: no-repeat; */
+	/* padding: 0;
+	margin: 0; */
+	/* height: 14em; */
+	/* height: 44em; */
+	/* min-height: 14em;
+	max-height: 44em; */
+/* } */
+
+main main > section:nth-of-type(3) div:nth-of-type(2){
+	/* width: 50%; */
+	/* height: 100vh; */
+	display: grid;
+	gap: 1em;
+	padding: 2em;
+	/* padding: 3em; */
+}
+
+
+
+main main > section:nth-of-type(3) span:last-of-type{
+	/* width: 100vw; */
+	/* position: fixed; */
+	top: 2em;
+	right: 1em;
+}
+
+
+
+
+/* 4 letter poster */
+
+main main > section:nth-of-type(4){
+	background-color: #111;
+	color: white;
+}
+
+main main > section:nth-of-type(4) p{
+	margin-bottom: 1em;
+}
+
+main main > section:nth-of-type(4) div:nth-of-type(2){
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5em;
+}
+
+main main > section:nth-of-type(4) img{
+	width: 40%;
+	max-width: 15em;
+}
+
+
+
+/* ****************************************************************************************** */
+@media (min-width:840px){
+	main main h2{
+		font-weight: lighter;
+		font-size: 1.5em;
+	}
+
+	/* probeer het zelf section */
+	main main > section:nth-of-type(2){
+		height: 30em;
+	}
+
+	main main > section:nth-of-type(2) h2{
+		font-size: 2em;
+	}
+
+	input{
+		width: 100%;
+		padding: 1em;
+		font-family: Insignia Roman, sans-serif;
+		font-size: 3em;
+		color: white;
+		background-color: transparent;
+		border: white 2px solid;
+		border-left: transparent;
+		border-right: transparent;
+		margin-top: 1.5em;
+	}
+
+
+
+
+	/* poster section */
+	main main > section:nth-of-type(4){
+		background-color: #111;
+		color: white;
+		/* display: flex; */
+		height: 100vh;
+		/* justify-content: center;
+		align-items: start; */
+		/* padding: 4em; */
+		/* border-left: #EAEAEA 4em solid; */
+	}
+
+	main main > section:nth-of-type(4) > div{
+		display: flex;
+		justify-content: center;
+		align-items: start;
+		border-left: #EAEAEA 4em solid;
+		padding-left: 2em;
+		width: 100%;
+	}
+
+	main main > section:nth-of-type(4) p{
+		margin-top: 1em;
+		margin-right: 1em;
+	}
+
+	main main > section:nth-of-type(4) div div{
+		width: 60%;
+		margin-top: 6em;
+
+	}
+
+	main main > section:nth-of-type(4) div:nth-of-type(2){
+		min-width: 15em;
+		max-width: 20em;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1em;
+	}
+}
+
+
+
+
+@media (min-width:975px){
+
+	/* eerste p na de nav */
+	main main > div:first-of-type{
+		display: flex;
+		place-content: center;
+	}
+
+	main main > div:first-of-type p{
+		width: 70%;
+	}
+
+	main main > section:first-of-type{
+		display: flex;
+		place-content: center;
+	}
+
+	main main > section:first-of-type > div{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 70%;
+	}
+
+	main main > section:first-of-type p{
+		width: 90%;
+		margin-right: 2em;
+	}
+
+
+
+	/* karakter en vormgeving section */
+
+	main main > div:nth-of-type(2){
+		/* width: 70%; */
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	main main > div:nth-of-type(2) section:nth-of-type(1){
+		display: flex;
+		/* place-content: center; */
+		align-items: center;
+	}
+
+	main main > div:nth-of-type(2) section:nth-of-type(1) > div{
+		display: flex;
+		width: 70%;
+	}
+
+	main main > div:nth-of-type(2) > div{
+		order: -100;
+		grid-row: span 2;
+		display: grid;
+		place-content: center;
+	}
+
+	/* voorbeelden en toepassingen section */
+
+	main main div:nth-of-type(2) section:nth-of-type(2) > div {
+		display: grid;
+		/* place-content: center; */
+	}
+
+	main main div:nth-of-type(2) section:nth-of-type(2) div div{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+		grid-gap: .5em;
+		max-width: 100%;
+		place-content: center;
+	}
+
+	figure{
+		width: fit-content;
+	}
+}
+
+@media (min-width:1280px){
+
+	/* Neville Brody */
+	main main > section:nth-of-type(3){
+		position: relative;
+	}
+
+	main main > section:nth-of-type(3) div:nth-of-type(2){
+		width: 50%;
+		height: 100%;
+		padding: 4em 2em;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(255, 255, 255, 0.516);
+	}
+}
